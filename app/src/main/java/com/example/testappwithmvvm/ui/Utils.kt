@@ -50,12 +50,12 @@ fun Fragment.handleApiError(
 ) {
     when {
         failure.isNetworkError -> requireView().snackbar(
-            "Please check your internet connection",
+            "Periksa Koneksi Anda",
             retry
         )
         failure.errorCode == 401 -> {
             if (this is LoginFragment) {
-                requireView().snackbar("You've entered incorrect email or password")
+                requireView().snackbar("oops, password yang anda masukkan salah")
             } else {
                 logout()
             }
